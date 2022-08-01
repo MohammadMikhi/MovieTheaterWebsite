@@ -3,7 +3,7 @@ import email
 from urllib import request
 from django.shortcuts import render
 from theater.models import Movies, Messages, emailSubscribers, Bookings, ShowingTimes
-
+from .forms import CreateNewBooking
 # Create your views here.
 
 
@@ -37,3 +37,8 @@ def bookings(response):
 
 def aboutus(response):
     pass
+
+def booking(request):
+    form = CreateNewBooking()
+    
+    return render(request, 'addBooking.html',{'form':form})
