@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div id="movieSlide" class="carousel slide bg-light w-100" data-bs-ride="true">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#movieSlide" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#movieSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#movieSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#movieSlide" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#movieSlide" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://writertherapy.com/wp-content/uploads/2020/03/Joker-2019-Movie-banner-spread.jpg"
+                class="poster rounded mx-auto d-block w-100" alt="Joker Poster">
+            <div class="carousel-caption d-inline">
+                <p class="genre">Thriller, Crime, Drama</p>
+                <h2 class="titleSlide">Joker (2019)</h2>
+                <p class="desc">A mentally troubled stand-up comedian embarks<br> on a downward spiral that<br>
+                    leads to
+                    the creation of an iconic villain.</p>
+                <button type="button"
+                    class="rating btn btn-outline-light rounded-circle float-start disabled">R</button>
+                <button type="button" class="trailer btn btn-danger float-start align-content-center"
+                    onclick="window.open('https\:\/\/www.youtube.com/watch?v=zAGVQLHvwOY&ab_channel=WarnerBros.Pictures')"><i
+                        class="playIcon material-symbols-outlined">play_arrow</i><span
+                        style="font-weight:bold;"> Play Trailer</span></button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://picfiles.alphacoders.com/656/65605.jpg"
+                class="poster rounded mx-auto d-block w-100" alt="Back to the future poster">
+            <div class="carousel-caption d-inline">
+                <p class="genre">Adventure, Comedy, Sci-fi</p>
+                <h2 class="titleSlide">Back to The Future (1985)</h2>
+                <p class="desc">Marty McFly, a 17-year-old high school student, is accidentally sent<br> thirty
+                    years into the past in a time-traveling DeLorean invented by<br> his close friend, the
+                    eccentric
+                    scientist Doc Brown.</p>
+                <button type="button"
+                    class="rating btn btn-outline-light rounded-circle float-start disabled">PG</button>
+                <button type="button" class="trailer btn btn-danger float-start align-content-center"
+                    onclick="window.open('https\:\/\/www.youtube.com/watch?v=qvsgGtivCgs&ab_channel=MovieclipsClassicTrailers')"><i
+                        class="playIcon material-symbols-outlined">play_arrow</i><span
+                        style="font-weight:bold;"> Play Trailer</span></button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://w0.peakpx.com/wallpaper/952/473/HD-wallpaper-wandavision-all-character-poster.jpg"
+                class="poster rounded mx-auto d-block w-100" alt="WandaVision Poster">
+            <div class="carousel-caption d-inline">
+                <p class="genre">Action, Comedy, Drama</p>
+                <h2 class="titleSlide">WandaVision (2021)</h2>
+                <p class="desc">Blends the style of classic sitcoms with the MCU,<br> in which Wanda Maximoff
+                    and
+                    Vision - two super-powered beings living their ideal<br> suburban lives - begin to suspect
+                    that
+                    everything is not as it seems.</p>
+                <button type="button"
+                    class="rating btn btn-outline-light rounded-circle float-start disabled">PG</button>
+                <button type="button" class="trailer btn btn-danger float-start align-content-center"
+                    onclick="window.open('https\:\/\/www.youtube.com/watch?v=sj9J2ecsSpo&ab_channel=MarvelEntertainment')"><i
+                        class="playIcon material-symbols-outlined">play_arrow</i><span
+                        style="font-weight:bold;"> Play Trailer</span></button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.elmstba.com/wp-content/uploads/Dora-and-the-Lost-City-of-Gold-2019.jpg"
+                class="poster rounded mx-auto d-block w-100" alt="Dora Poster">
+            <div class="carousel-caption d-inline">
+                <p class="genre">Action, Adventure, Comedy</p>
+                <h2 class="titleSlide">Dora and the Lost City of Gold (2019)</h2>
+                <p class="desc">Dora, a teenage explorer, leads her friends on an adventure to save her parents
+                    and solve the mystery behind a lost city of gold.</p>
+                <button type="button"
+                    class="rating btn btn-outline-light rounded-circle float-start disabled">PG</button>
+                <button type="button" class="trailer btn btn-danger float-start align-content-center"
+                    onclick="window.open('https\:\/\/www.youtube.com/watch?v=gUTtJjV852c&ab_channel=ParamountPictures')"><i
+                        class="playIcon material-symbols-outlined">play_arrow</i><span
+                        style="font-weight:bold;"> Play Trailer</span></button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://graphics.reuters.com/MOVIES-GODFATHER/lbpgnmrynvq/cdn/images/share-card.jpg"
+                class="poster rounded mx-auto d-block w-100" alt="The Godfather Poster">
+            <div class="carousel-caption d-inline">
+                <p class="genre">Crime, Drama</p>
+                <h2 class="titleSlide">The Godfather (1972)</h2>
+                <p class="desc">The aging patriarch of an organized crime dynasty in postwar<br> New York City
+                    transfers control of his clandestine<br> empire to his reluctant youngest son.</p>
+                <button type="button"
+                    class="rating btn btn-outline-light rounded-circle float-start disabled">R</button>
+                <button type="button" class="trailer btn btn-danger float-start align-content-center"
+                    onclick="window.open('https\:\/\/www.youtube.com/watch?v=UaVTIH8mujA&ab_channel=ParamountPictures')"><i
+                        class="playIcon material-symbols-outlined">play_arrow</i><span
+                        style="font-weight:bold;"> Play Trailer</span></button>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#movieSlide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#movieSlide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="mainMovies container-fluid flex-row flex-wrap justify-content-around align-content-center">
+    <div class="movieRow row">
+    {% for movie in movies %}
+        <div class="movie col border border-2 rounded-3 border-dark
+     flex-column flex-nowrap align-content-between justify-content-center">
+            <blockquote class="blockquote text-center">
+                <h2 class="title">{{movie.name}}</h2>
+            </blockquote>
+            <img src={{ movie.posterURL }} class="imgMovie"
+             alt="Movie poster" />
+            <p style="text-align:center; margin:5px;">{{movie.description}}</p>
+            <div class="buttons">
+                <span class="buttonsButton"><button type="button" class="btn btn-danger" data-toggle="modal"
+                    data-target="#bookingForm">Book Now</button></span>
+                <span class="buttonsButton"><a href="https://www.netflix.com/browse" class="netflixLink">Netflix</a></span>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% load static %}
+<div class="modal fade" id="bookingForm" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel"
+        aria-hidden="true">
+        <form class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="cart-modal-form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book A Movie</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-auto">
+                            <label>Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto">
+                            <input type="text" id="fname" placeholder="First Name" />
+                        </div>
+                        <div class="col col-auto">
+                            <input type="text" id="lname" placeholder="Last Name" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col col-auto">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto">
+                            <input type="email" id="email" name="email" placeholder="Email Address" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 7px;">
+                        <div class="col col-auto">
+                            <label for="times">Showing Times</label>
+                            <select id="times" name="times">
+                                <option value="11:30am">11:30am</option>
+                                <option value="2:30pm">2:30pm</option>
+                                <option value="8:00am">8:00pm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col col-auto">
+                            <label>Movie Class</label>
+                        </div>
+                        <div class="row">
+                            <div class="col col-2">
+
+                            </div>
+                            <div class="col col-4 m-2">
+                                <input type="radio" id="first" name="movieClass" value="first" />
+                                <img src={% static '/images/first-class.png' %} alt="first class" width="20px" height="20px">
+                                <label for="first">First Class</label>
+                            </div>
+                            <div class="col col-auto m-2">
+                                <input type="radio" id="economy" name="movieClass" value="economy" />
+                                <img src={% static '/images/cinema-seat.png' %} alt="economy class" width="20px" height="20px">
+                                <label for="economy">Economy Class</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:7px ;">
+                        <div class="col col-auto">
+                            <label>Payement Method</label>
+                        </div>
+                        <div class="row">
+                            <div class="col col-2">
+
+                            </div>
+                            <div class="col col-4 m-2">
+                                <input type="radio" id="cash" name="payment" value="cash" />
+                                <img src={% static '/images/money.png' %} alt="first class" width="20px" height="20px">
+                                <label for="cash">Cash</label>
+                            </div>
+                            <div class="col col-auto m-2">
+                                <input type="radio" id="credit" name="payment" value="credit" />
+                                <img src={% static '/images/credit-card.png' %} alt="first class" width="20px" height="20px">
+                                <label for="credit">Credit Card</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col col-auto">
+                                <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" />
+                                <label for="subscribe">Subscribe To Email Service</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Booking</button>
+                    <input type="submit" class="btn btn-primary" value="Confirm Booking" />
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
