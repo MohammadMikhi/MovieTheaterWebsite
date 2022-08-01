@@ -71,18 +71,18 @@
             <div class="m-2 w-25 col-4">
                 <h5>Send Us A Message</h5>
                 <hr>
-                <form>
+                <form method="POST" action=""> {% csrf_token %}
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                        <input type="text" class="form-control" id="nameInput" placeholder="Name" name="name">
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                        <input type="email" class="form-control" id="emailInput" placeholder="Email" name="email">
                     </div>
                     <div class="mb-3">
                         <textarea class="form-control" id="messageInput" rows="3"
-                            placeholder="Enter Your Message"></textarea>
+                            placeholder="Enter Your Message" name="message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" name="messageSubmit">Send Message</button>
                 </form>
             </div>
         </div>
