@@ -2,8 +2,7 @@ from email import message
 import email
 from urllib import request
 from django.shortcuts import render
-
-from theater.models import Movies, Messages, emailSubscribers, Bookings
+from theater.models import Movies, Messages, emailSubscribers, Bookings, ShowingTimes
 
 # Create your views here.
 
@@ -29,7 +28,7 @@ def home(request):
                 newSubscriber.save()
             newBooking.save()
 
-    return render(request, 'home.html', {"movies": Movies.objects.all()})
+    return render(request, 'home.html', {"movies": Movies.objects.all(), "showingTimes" : ShowingTimes.objects.all()})
 
 
 def bookings(response):

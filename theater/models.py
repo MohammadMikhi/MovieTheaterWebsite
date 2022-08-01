@@ -35,3 +35,11 @@ class Bookings(models.Model):
     def __str__(self):
         return self.name
     
+class ShowingTimes(models.Model):
+    time=models.TimeField()
+    movieName=models.CharField(max_length=100)
+    capacity= models.DecimalField(max_digits=99, decimal_places=3)
+    
+    def __str__(self):
+        return str(self.time)
+    
