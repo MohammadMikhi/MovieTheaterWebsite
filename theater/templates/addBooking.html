@@ -1,20 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="Booking Form.css" />
-    <script>
-        function cancelClick() {
-            window.open("page.html");
-        }
-    </script>
     <title>Book A Movie</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
     <main>
-        <form class="booking" action="" method="post">
+        <form class="booking" action='' method="post">
             {% csrf_token %}
             {{form.as_p}}
             <input type="submit" value="Confirm Booking" name="bookingSubmit"/>
