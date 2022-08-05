@@ -1,3 +1,4 @@
+from random import choices
 from django.shortcuts import redirect, render
 from theater.models import Movies, Messages, Bookings, ShowingTimes
 from .forms import CreateNewBooking
@@ -35,14 +36,17 @@ def aboutus(response):
     pass
 
 
-def booking(response):
+def addBooking(response, movie_id):
+    movieName= Movies.objects.get(id=int(movie_id))
+    times= ShowingTimes.objects.filter(movieName=str(movieName)).only('time')
+    print(times)
     if response.method == 'POST':
-        form = CreateNewBooking(response.POST)
+        form = CreateNewBooking(response.POST,times)
         if form.is_valid():
             print(response.POST)
             form.save()
         return redirect('/home/')
     else:
-        form = CreateNewBooking()
+        form = CreateNewBooking(times)
 
     return render(response, 'addBooking.html', {'form': form})

@@ -24,12 +24,9 @@ class Messages(models.Model):
 class Bookings(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    showingTime = models.CharField(max_length=50, choices=[
-                                   ('13:00:00', '1:00'), ('14:00:00', '2:00')])
-    bookingClass = models.CharField(max_length=100, choices=[(
-        'economy', 'Economy'), ('first class', 'First Class')])
-    paymentMethod = models.CharField(max_length=100, choices=[
-                                     ('cash', 'Cash'), ('credit', 'Credit Card')])
+    showingTime = models.CharField(max_length=50)
+    bookingClass = models.CharField(max_length=100)
+    paymentMethod = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

@@ -122,7 +122,7 @@
              alt="Movie poster" />
             <p style="text-align:center; margin:5px;">{{movie.description}}</p>
             <div class="buttons">
-                <span class="buttonsButton"><a class="btn btn-danger" href="/addBooking">Book Now</a></span>
+                <span class="buttonsButton"><a class="btn btn-danger" href={% url 'addBooking' movie.id %}>Book Now</a></span>
                 <span class="buttonsButton"><a href="https://www.netflix.com/browse" class="netflixLink">Netflix</a></span>
             </div>
         </div>
