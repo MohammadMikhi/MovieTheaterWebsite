@@ -37,9 +37,8 @@ def aboutus(response):
 
 
 def addBooking(response, movie_id):
-    movieName= Movies.objects.get(id=int(movie_id))
-    times= ShowingTimes.objects.filter(movieName=str(movieName)).only('time')
-    print(times)
+    movie= Movies.objects.get(id=movie_id)
+    times= ShowingTimes.objects.filter(movie__name=movie).only('time')
     if response.method == 'POST':
         form = CreateNewBooking(response.POST,times)
         if form.is_valid():

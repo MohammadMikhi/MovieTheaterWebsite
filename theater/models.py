@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -34,7 +35,7 @@ class Bookings(models.Model):
 
 class ShowingTimes(models.Model):
     time = models.TimeField()
-    movieName = models.CharField(max_length=100)
+    movie = models.ForeignKey(Movies, blank=True, null=True, on_delete=models.CASCADE)
     capacity = models.DecimalField(max_digits=99, decimal_places=3)
 
     def __str__(self):
