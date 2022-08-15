@@ -34,9 +34,9 @@
     <h1 class="pageTitle"><img src={% static '/images/popcorn.png' %} alt="popcorn" class="pageLogo">MOVIE THEATER</h1>
     <br><br><br>
     <div class="mainMenu">
-        <h2 class="menuItem">Home Page</h2>
-        <h2 class="menuItem">List Of Movies</h2>
-        <h2 class="menuItem">Bookings</h2>
+        <h2><a href={% url 'home' %} class="menuItem">Home Page</a></h2>
+        <h2><a class="menuItem">List Of Movies</a></h2>
+        <h2><a href={% url 'searchBookings' %} class="menuItem">Find My Booking</a></h2>
     </div>
     </br></br>
 

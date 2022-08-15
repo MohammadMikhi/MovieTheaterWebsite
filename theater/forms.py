@@ -1,10 +1,12 @@
+from asyncio.windows_events import NULL
+from turtle import title
 from django import forms
 from .models import Bookings
 class CreateNewBooking(forms.ModelForm):
     
     def __init__(self, time_list, *args, **kwargs):
         super(CreateNewBooking, self).__init__(*args, **kwargs)
-        self.fields['showingTime'] = forms.ChoiceField(choices=tuple([(str(time), str(time)) for time in time_list]))
+        self.fields['showingTime'] = forms.ChoiceField(choices=tuple([(str(time), str(time)) for time in time_list]), label="Showing time")
     
     name= forms.CharField(max_length=100, label="Name")
     email= forms.EmailField()
@@ -15,4 +17,8 @@ class CreateNewBooking(forms.ModelForm):
         model= Bookings
         fields=['name', 'email', 'showingTime', 'bookingClass', 'paymentMethod']
 
+    
+class searchBooking(forms.Form):
+    email= forms.EmailField()
+     
     

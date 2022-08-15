@@ -1,7 +1,6 @@
-from random import choices
 from django.shortcuts import redirect, render
-from theater.models import Movies, Messages, Bookings, ShowingTimes
-from .forms import CreateNewBooking
+from theater.models import Movies, Messages, ShowingTimes, Bookings
+from .forms import CreateNewBooking, searchBooking
 # Create your views here.
 
 
@@ -25,14 +24,24 @@ def home(request):
             newBooking.save()
     """
 
-    return render(request, 'home.html', {"movies": Movies.objects.all(), "showingTimes": ShowingTimes.objects.all()})
+    return render(request, 'home.html', {"movies": Movies.objects.all()})
 
 
-def bookings(response):
-    pass
+def searchBookings(response):
+    if response.method == "POST":
+        form= searchBooking(response.POST)
+        
+        if form.is_valid():
+            e= form.cleaned_data['email']
+            booking= Bookings.objects.filter(email=e).first
+    else:
+        form= searchBooking()
+        booking=Bookings.objects.filter(email="").first  
+    print(booking)      
+    return render(response, 'searchBookings.html',{'form': form, 'booking': booking})
 
 
-def aboutus(response):
+def listOfMovies(response):
     pass
 
 
@@ -40,7 +49,7 @@ def addBooking(response, movie_id):
     movie= Movies.objects.get(id=movie_id)
     times= ShowingTimes.objects.filter(movie__name=movie).only('time')
     if response.method == 'POST':
-        form = CreateNewBooking(response.POST,times)
+        form = CreateNewBooking(times, response.POST)
         if form.is_valid():
             print(response.POST)
             form.save()
