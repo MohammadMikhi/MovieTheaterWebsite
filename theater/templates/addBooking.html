@@ -1,18 +1,9 @@
-<html lang="en">
-
-<head>
-    <title>Book A Movie</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
-
-<body>
-    <main>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
         <form class="booking" action='' method="post">
             {% csrf_token %}
-            {{form.as_p}}
+            {{ form|crispy }}
             <input type="submit" value="Confirm Booking" name="bookingSubmit"/>
         </form>
-    </main>
-</body>
-
-</html>
+{% endblock %}

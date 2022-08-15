@@ -1,25 +1,14 @@
-<html lang="en">
-
-<head>
-    <title>Find My Booking</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
-
-<body>
-    <main>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+    {% block content %}
         <form class="searchBooking" action='' method="post">
             {% csrf_token %}
-            {{form.as_p}}
+            {{form|crispy}}
             <input type="submit" value="Search Booking" name="bookingSearch"/>
         </form>
-        {% block content %}
             <h2>Name: {{booking.name}}</h2>
             <h2>Email: {{booking.email}}</h2>
-            <h2>Time: {{booking.showingTime}}</h2>
+            <h2>Time: {{ booking.showingTime|date:"h:i A" }}</h2>
             <h2>Class: {{booking.bookingClass}}</h2>
             <h2>Payment: {{booking.paymentMethod}}</h2>
-        {% endblock %}
-    </main>
-</body>
-
-</html>
+    {% endblock %}

@@ -1,3 +1,4 @@
+from time import time
 from django.shortcuts import redirect, render
 from theater.models import Movies, Messages, ShowingTimes, Bookings
 from .forms import CreateNewBooking, searchBooking
@@ -36,8 +37,8 @@ def searchBookings(response):
             booking= Bookings.objects.filter(email=e).first
     else:
         form= searchBooking()
-        booking=Bookings.objects.filter(email="").first  
-    print(booking)      
+        booking=Bookings.objects.filter(email="").first
+    print(booking) 
     return render(response, 'searchBookings.html',{'form': form, 'booking': booking})
 
 

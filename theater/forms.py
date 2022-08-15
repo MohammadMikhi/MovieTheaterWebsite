@@ -1,5 +1,3 @@
-from asyncio.windows_events import NULL
-from turtle import title
 from django import forms
 from .models import Bookings
 class CreateNewBooking(forms.ModelForm):
