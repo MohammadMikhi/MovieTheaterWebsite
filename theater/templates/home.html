@@ -113,17 +113,10 @@
 <div class="mainMovies container-fluid flex-row flex-wrap justify-content-around align-content-center">
     <div class="movieRow row">
     {% for movie in movies %}
-        <div class="movie col border border-2 rounded-3 border-dark
-     flex-column flex-nowrap align-content-between justify-content-center">
-            <blockquote class="blockquote text-center">
-                <h2 class="title">{{movie.name}}</h2>
-            </blockquote>
-            <img src={{ movie.posterURL }} class="imgMovie"
-             alt="Movie poster" />
-            <p style="text-align:center; margin:5px;">{{movie.description}}</p>
-            <div class="buttons">
-                <span class="buttonsButton"><a class="btn btn-danger" href={% url 'addBooking' movie.id %}>Book Now</a></span>
-                <span class="buttonsButton"><a href="https://www.netflix.com/browse" class="netflixLink">Netflix</a></span>
+        <div class="movie col col-2 flex-column flex-wrap align-content-between justify-content-center" style="background-image: url({{movie.posterURL}});">
+           <div class="movieInfo">
+                <p class="movieName">{{movie.name}}</p>
+                <a type="button" class="btn btn-danger" href={% url 'addBooking' movie.id %}>Book Now</a>
             </div>
         </div>
     {% endfor %}

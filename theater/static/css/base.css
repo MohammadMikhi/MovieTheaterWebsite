@@ -1,104 +1,151 @@
 .pageTitle {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    font-size: 4em;
+    font-size: 35px;
+    float: left;
 }
 
 .pageLogo {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 }
-.nav-link{
+
+.nav-link {
     font-size: 1.75em;
     background-color: #EDEDED;
     color: #171717;
     border: 0;
 }
-.carousel-caption{
+
+.carousel-caption {
     position: absolute;
     top: 40%;
     right: 20%;
     bottom: 25%;
     left: 20%;
 }
-.titleSlide{
+
+.titleSlide {
     text-align: start;
     margin: 6px;
 }
-.desc{
+
+.desc {
     text-align: start;
     font-size: 1.2em;
     color: #EDEDED;
 }
-.genre{
- text-align: start;
- color: #DA0037;
- font-weight: bold;
+
+.genre {
+    text-align: start;
+    color: #DA0037;
+    font-weight: bold;
 }
-.rating{
+
+.rating {
     font-size: large;
 }
-.trailer{
+
+.trailer {
     margin-left: 20px;
     color: #EDEDED;
 }
-.playIcon{
+
+.playIcon {
     position: relative;
     display: inline-flex;
     vertical-align: middle;
 }
-.poster{
+
+.poster {
     opacity: 75%;
 }
-main{
-    background-color: #444444;
+
+main {
+    background-color: #393E46;
     color: #EDEDED;
 }
-body{
+
+body {
     background-color: #EDEDED;
 }
-header{
+
+header {
     background-color: #444444;
 }
-.footer{
+
+.footer {
     color: #171717;
+    margin-top: 20px;
 }
+
 .mainMenu {
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid red;
 }
-.menuItem{
+
+.menuItem {
     color: #444444;
+    text-decoration: none;
+    font-size: 20px;
 }
-.imgMovie {
-    width: 400px;
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+.menuItem:hover {
+    color: #DA0037;
 }
 
 .movie {
-    margin: 10px;
-    color: #EDEDED;
+    height: 315px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px;
+    border-radius: 16px;
+    display: flex;
+    margin: 45px;
 }
-.modal-content{
+
+.modal-content {
     background-color: #444444;
     color: #EDEDED;
 }
-.netflixLink{
-    color: #DA0037;
-    font-size: 1.2em;
-    text-decoration: none;
+
+.booking {
+    padding-left: 37.5%;
+    padding-right: 37.5%;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
-.buttons{
+
+.findMyBooking {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 75%;
+    padding-left: 5%;
+}
+.movieName {
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    
+}
+.movieInfo {
+    display: none;
+}
+
+.movie:hover {
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
+
+.movie:hover .movieInfo {
+    color: #EDEDED;
     display: flex;
+    flex-flow: column;
     justify-content: center;
-    align-content: center;
-}
-.buttonsButton{
-    margin-right: 45px;
-    margin-bottom: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
 }

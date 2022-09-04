@@ -34,11 +34,11 @@ def searchBookings(response):
         
         if form.is_valid():
             e= form.cleaned_data['email']
-            booking= Bookings.objects.filter(email=e).first
+            booking= Bookings.objects.filter(email=e)
     else:
         form= searchBooking()
         booking=Bookings.objects.filter(email="").first
-    print(booking) 
+    print(booking)
     return render(response, 'searchBookings.html',{'form': form, 'booking': booking})
 
 
