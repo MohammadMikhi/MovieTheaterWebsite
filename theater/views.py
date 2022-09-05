@@ -13,17 +13,6 @@ def home(request):
             email1 = request.POST['email']
             newMessage = Messages(name=name1, message=message1, email=email1)
             newMessage.save()
-    """
-        elif 'bookingSubmit' in request.POST:
-            name1 = request.POST['fname'] + " " + request.POST['lname']
-            email1 = request.POST['email']
-            time = request.POST['times']
-            class1 = request.POST['movieClass']
-            payment = request.POST['payment']
-            newBooking = Bookings(name=name1, email=email1, showingTime=time,
-                                  bookingClass=class1, paymentMethod=payment)
-            newBooking.save()
-    """
 
     return render(request, 'home.html', {"movies": Movies.objects.all()})
 
