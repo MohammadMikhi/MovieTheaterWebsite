@@ -132,11 +132,11 @@ header {
     padding-left: 5%;
 }
 .movieName {
+    font-family: 'poppins', sans-serif;
     text-align: center;
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
     font-size: 18px;
-    font-family: 'poppins', sans-serif;
     
 }
 .movieInfo {
