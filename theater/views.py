@@ -1,4 +1,4 @@
-from time import time
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from theater.models import Movies, Messages, ShowingTimes, Bookings
 from .forms import CreateNewBooking, searchBooking
@@ -6,29 +6,35 @@ from .forms import CreateNewBooking, searchBooking
 
 
 def home(request):
-    if request.method == 'POST':
-        if 'messageSubmit' in request.POST:
-            name1 = request.POST['name']
-            message1 = request.POST['message']
-            email1 = request.POST['email']
-            newMessage = Messages(name=name1, message=message1, email=email1)
-            newMessage.save()
-
     return render(request, 'home.html', {"movies": Movies.objects.all()})
+
+
+def newMessage(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        message = request.POST['message']
+        email = request.POST['email']
+        Messages.objects.create(
+            name=name,
+            email=email,
+            message=message
+        )
+        success= name
+        return HttpResponse(success)
 
 
 def searchBookings(response):
     if response.method == "POST":
-        form= searchBooking(response.POST)
-        
+        form = searchBooking(response.POST)
+
         if form.is_valid():
-            e= form.cleaned_data['email']
-            booking= Bookings.objects.filter(email=e)
+            e = form.cleaned_data['email']
+            booking = Bookings.objects.filter(email=e)
     else:
-        form= searchBooking()
-        booking=Bookings.objects.filter(email="").first
+        form = searchBooking()
+        booking = Bookings.objects.filter(email="").first
     print(booking)
-    return render(response, 'searchBookings.html',{'form': form, 'booking': booking})
+    return render(response, 'searchBookings.html', {'form': form, 'booking': booking})
 
 
 def listOfMovies(response):
@@ -36,8 +42,8 @@ def listOfMovies(response):
 
 
 def addBooking(response, movie_id):
-    movie= Movies.objects.get(id=movie_id)
-    times= ShowingTimes.objects.filter(movie__name=movie).only('time')
+    movie = Movies.objects.get(id=movie_id)
+    times = ShowingTimes.objects.filter(movie__name=movie).only('time')
     if response.method == 'POST':
         form = CreateNewBooking(times, response.POST)
         if form.is_valid():

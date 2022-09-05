@@ -28,12 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous" defer></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous" defer></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
 </head>
 
@@ -78,7 +73,7 @@
             <div class="m-2 w-25 col-4">
                 <h5>Send Us A Message</h5>
                 <hr>
-                <form method="POST" action=""> {% csrf_token %}
+                <form method="POST" action="" id="messageForm"> {% csrf_token %}
                     <div class="mb-3">
                         <input type="text" class="form-control" id="nameInput" placeholder="Name" name="name">
                     </div>
@@ -92,8 +87,50 @@
                     <button type="submit" class="btn btn-primary" name="messageSubmit">Send Message</button>
                 </form>
             </div>
+            <script type="text/javascript">
+                $(document).on('submit','#messageForm',function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'newMessage/',
+                        data:{
+                            name:$('#nameInput').val(),
+                            email:$('#emailInput').val(),
+                            message:$('#messageInput').val(),
+                            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                        },
+                        success:function(data){
+                            $("#successModal").modal('show');
+                            $('#nameInput').val('');
+                            $('#emailInput').val('');
+                            $('#messageInput').val('');
+                        }
+                
+                    })
+                });
+            </script>
         </div>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src={% static '/images/check.png' %} alt="check" class="check">
+            <p style="text-align:center; margin-top: 10px;">Thank you for the feedback!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
 </body>
 
 </html>
