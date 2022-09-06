@@ -6,5 +6,5 @@ urlpatterns = [
     path('searchBookings/', views.searchBookings, name="searchBookings"),
     path('', views.home, name="home"),
     path('addBooking/<int:movie_id>', views.addBooking, name="addBooking"),
-    path('newMessage/', views.newMessage, name="newMessage")
+    path('newMessage/', views.newMessage, name="newMessage"),
 ]

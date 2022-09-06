@@ -33,8 +33,8 @@ def searchBookings(response):
     else:
         form = searchBooking()
         booking = Bookings.objects.filter(email="").first
-    print(booking)
     return render(response, 'searchBookings.html', {'form': form, 'booking': booking})
+
 
 
 def listOfMovies(response):
@@ -47,7 +47,6 @@ def addBooking(response, movie_id):
     if response.method == 'POST':
         form = CreateNewBooking(times, response.POST)
         if form.is_valid():
-            print(response.POST)
             form.save()
         return redirect('/home/')
     else:

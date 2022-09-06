@@ -2,11 +2,12 @@
 {% load crispy_forms_tags %}
     {% block content %}
     <div class="findMyBooking">
-        <form class="searchBooking" action='' method="post">
+        <form class="searchBooking" action='' method="post" id="searchForm">
             {% csrf_token %}
             {{form|crispy}}
-            <input type="submit" value="Search Booking" name="bookingSearch"/>
+            <input type="submit" class="btn btn-primary" value="Search Booking" name="bookingSearch"/>
         </form>
+        <div id="bookingFound">
             {% for b in booking%}
             <h5>Name: {{b.name}}</h5>
             <h5>Time: {{ b.showingTime|date:"h:i A" }}</h5>
@@ -14,6 +15,6 @@
             <h5>Payment: {{b.paymentMethod}}</h5>
             <br><br>
             {% endfor %}
+        </div>
     </div>
-    
     {% endblock %}
